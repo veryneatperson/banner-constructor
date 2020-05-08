@@ -1,0 +1,32 @@
+.FormField {
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+
+  .Label {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .Field {
+    padding: 10px 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #cfcfcf;
+  }
+
+  .valid {
+    border: 1px solid green;
+  }
+
+  .invalid {
+    border: 1px solid red;
+  }
+
+  .ErrorMsg {
+    color: red;
+    font-size: 10px;
+  }
+}
