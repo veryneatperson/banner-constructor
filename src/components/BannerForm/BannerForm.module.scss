@@ -1,0 +1,35 @@
+.BannerForm {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px #555555;
+  background-color: #ffffff;
+
+  .Button {
+    width: 100%;
+    background-color: #519e8a;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 1em;
+    padding: 8px 0px;
+    font-size: 1em;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    margin-bottom: 0.25em;
+    cursor: pointer;
+
+    &:hover {
+      background: #8ccf7b;
+    }
+
+    &:disabled {
+      background: #949090;
+      pointer-events: none;
+    }
+  }
+}
