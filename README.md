@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Тестовое задание - "конструктор баннера"
 
-## Available Scripts
+## Описание задания
 
-In the project directory, you can run:
+### Интерфейс приложения
 
-### `yarn start`
+Слева располагается меню, состоящее из 2 пунктов: «Параметры» и «Предпросмотр». При первичном открытии пункт «Предпросмотр» недоступен для клика, текущим является пункт «Параметры». В центре располагается содержимое пункта меню; для «Параметры» - это форма с параметрами баннера, а для «Предпросмотр» - сформированный на базе заполненной формы баннер.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Форма для пункта меню «Параметры» имеет 5 полей ввода: «Название баннера» (текстовое), «Тип баннера» (селект, значения - «Прямой» или «Обратный»), «Изображение вертикальное» (текстовое, ссылка), «Изображение горизонтальное» (текстовое, ссылка), «Целевая ссылка» (текстовое, ссылка). Все поля являются обязательными для заполнения и должны валидироваться. Ниже полей располагается кнопка «Показать», которая, по сути, осуществляет сабмит формы.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Алгоритм работы
 
-### `yarn test`
+При открытии страницы в левом меню активным является пункт «Параметры», пункт меню «Предпросмотр» недоступен. В центральной части отображается форма, описанная выше. При ее заполнении и нажатии на кнопку «Показать» ниже формы должен появляться динамический баннер, состоящий из картинки, заданной в соответствующем поле, поверх которой должны располагаться название баннера и кнопка «Перейти»; щелчок по этой кнопке должен открывать новое окно браузера с целевой ссылкой, указанной в параметрах. Если тип баннера задан как «Обратный», то порядок меняется - сначала кнопка, потом название. В зависимости от ориентации устройства изображение меняется на соответствующее.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Пункт меню слева после нажатия на кнопку «Показать» должен смениться на пункт «Предпросмотр», который становится активным и доступным для клика. Теперь можно перемещаться между пунктами меню, нажимая в меню на «Предпросмотр» и видя текущий отображенный баннер, либо нажимая на «Параметры» и возвращаясь к форме ввода параметров (возможно со скроллом). При возврате на форму ввода параметров и нажатии на кнопку «Показать» должен показываться обновленный баннер, основанный на обновленных параметрах; пункт меню также снова должен смениться на «Предпросмотр».
 
-### `yarn build`
+## Решение
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Установка и запуск
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. Склонировать репо `git clone git@github.com:veryneatperson/banner-constructor.git`
+2. Перейти в папку проекта `cd banner-constructor`
+3. Установить зависимости `npm install`
+4. Запустить проект `npm start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Комментарии к решению
 
-### `yarn eject`
+- Задание выполнено на хуках с минимальным использованием сторонних библиотек
+- При написании компонента с формой были приложены усилия для соблюдения DRY-принципа (конфигурация формы) и применения некоторых техних оптимизации (useCallback и useMemo)
+- Используется обработка событий, связанных с изменением hash url и ориентацией устройства (именно для этого сделан большой отступ между формой и предпросмотром баннера)
+- Применяется перенаправление рефов (forwarding refs)
+- Приустствует предохранитель (ErrorBoundary) для отлова возникших ошибок
+- С помощью debounce-функции снижаем частоту вызова обработчика события 'onscroll'
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Использованные пакеты
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. node-sass
+2. classnames
+3. lodash.debounce
+4. validator
