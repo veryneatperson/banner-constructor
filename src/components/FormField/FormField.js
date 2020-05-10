@@ -13,7 +13,7 @@ const FormField = ({ field, onChange }) => {
       return (
         <select {...attributes} className={classes} onChange={onChange}>
           <option value={defaultValue} disabled>
-            -- select an option --
+            -- выберите один из вариантов --
           </option>
           {field.options.map((el) => (
             <option key={el.name} name={el.name}>
@@ -29,9 +29,7 @@ const FormField = ({ field, onChange }) => {
 
   return (
     <div className={styles.FormField}>
-      <label className={styles.Label} htmlFor="">
-        {label}
-      </label>
+      <label className={styles.Label}>{label}</label>
       {constructField()}
       {touched && !valid ? <span className={styles.ErrorMsg}>{errorMsg}</span> : null}
     </div>

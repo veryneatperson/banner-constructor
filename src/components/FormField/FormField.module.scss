@@ -1,7 +1,9 @@
+@import '../../config';
+
 .FormField {
   width: 100%;
   padding: 10px 10px;
-  border-radius: 5px;
+  border-radius: $border-radius;
   display: flex;
   flex-direction: column;
 
@@ -12,21 +14,21 @@
 
   .Field {
     padding: 10px 10px;
-    border-radius: 5px;
+    border-radius: $border-radius;
     outline: none;
-    border: 1px solid #cfcfcf;
+    border: 1px solid $light-grey;
   }
 
   .valid {
-    border: 1px solid green;
+    border: 1px solid $green;
   }
 
   .invalid {
-    border: 1px solid red;
+    border: 1px solid $red;
   }
 
   .ErrorMsg {
-    color: red;
+    color: $red;
     font-size: 10px;
   }
 }
