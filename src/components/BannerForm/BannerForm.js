@@ -4,7 +4,7 @@ import styles from './BannerForm.module.scss';
 import formConfig from '../../formConfig';
 import FormField from '../FormField/FormField';
 
-const BannerForm = ({ addBanner }) => {
+const BannerForm = React.forwardRef(({ addBanner, handleHashChange, formId }, ref) => {
   const [fields, setFields] = useState(
     formConfig.fields.map((el) => ({
       ...el,
@@ -14,10 +14,15 @@ const BannerForm = ({ addBanner }) => {
     })),
   );
 
-  const constructBanner = () => fields.reduce((acc, el) => (acc[el.name] = el.value), {});
+  const constructBanner = () =>
+    fields.reduce((acc, el) => {
+      acc[el.name] = el.value;
+      return acc;
+    }, {});
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    handleHashChange();
     addBanner(constructBanner());
   };
 
@@ -38,7 +43,7 @@ const BannerForm = ({ addBanner }) => {
   }, []);
 
   return (
-    <form className={styles.BannerForm} onSubmit={handleSubmit} id="bannerForm">
+    <form ref={ref} className={styles.BannerForm} onSubmit={handleSubmit} id={formId}>
       {fields.map((el) => (
         <FormField key={el.name} field={el} onChange={handleChange} />
       ))}
@@ -47,6 +52,6 @@ const BannerForm = ({ addBanner }) => {
       </button>
     </form>
   );
-};
+});
 
 export default BannerForm;

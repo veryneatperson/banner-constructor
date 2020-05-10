@@ -1,3 +1,5 @@
+@import '../../config';
+
 .BannerForm {
   width: 100%;
   display: flex;
@@ -6,29 +8,27 @@
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0px 5px 10px #555555;
-  background-color: #ffffff;
+  background-color: $white;
 
   .Button {
     width: 100%;
-    background-color: #519e8a;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    border-radius: 5px;
+    background-color: $green;
+    color: $white;
+    border: 2px solid $white;
+    border-radius: $border-radius;
     width: 100%;
-    margin-top: 1em;
+    margin: 10px;
     padding: 8px 0px;
-    font-size: 1em;
-    font-weight: lighter;
+    font-size: 14px;
     letter-spacing: 1px;
-    margin-bottom: 0.25em;
     cursor: pointer;
 
     &:hover {
-      background: #8ccf7b;
+      background: $light-green;
     }
 
     &:disabled {
-      background: #949090;
+      background: $grey;
       pointer-events: none;
     }
   }
