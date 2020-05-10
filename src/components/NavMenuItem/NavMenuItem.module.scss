@@ -1,0 +1,39 @@
+@import '../../config';
+
+.NavMenuItem {
+  list-style: none;
+  width: 100%;
+  border-bottom: 1px solid $white;
+  background-color: $blue;
+  overflow: hidden;
+
+  &:first-child {
+    border-radius: $border-radius $border-radius 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+
+  &:hover {
+    background-color: $light-blue;
+  }
+
+  a {
+    display: flex;
+    padding: 15px 0px;
+    justify-content: center;
+    text-decoration: none;
+    color: $white;
+  }
+}
+
+.disabled {
+  background: $grey;
+  pointer-events: none;
+}
+
+.active {
+  background-color: $dark-blue;
+  pointer-events: none;
+}
