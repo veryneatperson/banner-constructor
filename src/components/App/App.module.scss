@@ -1,0 +1,27 @@
+@import './config';
+
+.Container {
+  max-width: 700px;
+  height: 100vh;
+  background-color: $white;
+  margin: 0 auto;
+  padding: 25px 15px;
+  display: flex;
+  justify-content: space-between;
+  overflow: auto;
+
+  .Aside {
+    width: 30%;
+    position: sticky;
+    top: 0px;
+  }
+
+  .Content {
+    width: 66%;
+
+    // just for demonstraction puprposes
+    & > * {
+      margin-bottom: 400px;
+    }
+  }
+}
