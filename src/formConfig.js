@@ -42,7 +42,7 @@ export default {
     {
       name: 'verticalImgUrl',
       label: 'Изображение вертикальное',
-      placeholder: 'https://vertical-img.png',
+      placeholder: 'https://vertical-banner-image.png',
       type: 'url',
       defaultValue: '',
       required: true,
@@ -52,7 +52,7 @@ export default {
     {
       name: 'horizontalImgUrl',
       label: 'Изображение горизонтальное',
-      placeholder: 'https://horizontal-img.png',
+      placeholder: 'https://horizontal-banner-image.png',
       type: 'url',
       defaultValue: '',
       required: true,
@@ -62,7 +62,7 @@ export default {
     {
       name: 'targetUrl',
       label: 'Целевая ссылка',
-      placeholder: 'https://goto-url.com',
+      placeholder: 'https://target-url-to-goto.com',
       type: 'url',
       defaultValue: '',
       required: true,
